@@ -1,0 +1,157 @@
+//Animation
+@import "function.scss";
+@import "keyframes.scss";
+@import "delay.scss";
+
+.animated {
+	@include duration(0.6s);
+	@include fillmode(both);
+}
+
+.bigpulse {
+	@include name(bigpulse);
+}
+
+.xiexia {
+	@include name(xiexia);
+	@include duration(0.5s!important);
+}
+
+.zoomIn{
+    @include name(zoomIn);
+    @include prefixer(transform-origin, (70% 100%));
+}
+
+.a_hf_rt{
+	@include name(a_hf_rt);
+}
+.a_hf{
+	@include name(a_hf);
+}
+.a_hf_lt{
+	@include name(a_hf_lt);
+}
+
+.hand_lt{
+	@include name(hand_lt);
+}
+
+.hand_rt{
+	@include name(hand_rt);
+}
+
+
+.bounceInDown {
+	@include name(bounceInDown);
+	@include duration(1s!important);
+}
+
+.fadeInLeft {
+	@include name(fadeInLeft);
+	@include duration(1s!important);
+}
+
+.fadeInRight {
+	@include name(fadeInRight);
+	@include duration(1s!important);
+}
+
+.fadeIn {
+	@include name(fadeIn);
+	@include duration(1s!important);
+}
+
+.fadeInUp {
+	@include name(fadeInUp);
+	@include duration(1s!important);
+}
+
+.fadeInDown {
+	@include name(fadeInDown);
+}
+
+.fadeScaleIn{
+	@include name(fadeScaleIn);
+	@include duration(1s!important);
+}
+
+.flipInRightY {
+	@include name(flipInRightY);
+	@include prefixer(transform-origin, (right center));
+	      
+}
+
+.flipInLeftY {
+	@include name(flipInLeftY);
+	@include prefixer(transform-origin, (left center));
+}
+
+.dropdown{
+	@include name(dropdown);
+}
+
+.zi_lian{
+	@include name(zi_lian);
+}
+.zi_zhong{
+	@include name(zi_zhong);
+}
+.zi_kuai{
+	@include name(zi_kuai);
+}
+.zi_le{
+	@include name(zi_le);
+}
+.zi_mei{
+	@include name(zi_mei);
+}
+.zi_yi{
+	@include name(zi_yi);
+}
+.zi_tian{
+	@include name(zi_tian);
+}
+
+.drops{
+	@include name(drops);
+}
+
+.heart{
+	@include name(heart);
+	@include duration(1s!important);
+}
+
+.fly{
+	@include name(fly);
+	@include duration(1s!important);
+}
+
+.levelup{
+	@include name(levelup);
+}
+
+.fadeLitteUp{
+	@include name(fadeLitteUp);
+}
+
+.moveIconUp {
+	@include prefixer(animation, (moveIconUp ease 1.5s both infinite));
+}
+
+.moveIcoLeft {
+	@include prefixer(animation, (moveIcoLeft ease 1.5s both infinite));
+}
+
+
+.light{
+	@include name(light);
+	@include duration(0.5s!important);
+}
+
+.rotateInDownLeft {
+	@include name(rotateInDownLeft);
+}
+
+.rotateInDownRight {
+	@include name(rotateInDownRight);
+}

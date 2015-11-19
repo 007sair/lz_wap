@@ -1,0 +1,110 @@
+//============Function============= 
+
+@function toREM($px){
+	@return $px/40 + rem;
+}
+
+@mixin HVcenter{
+	display: box; display: -webkit-box; display: -moz-box; display: -ms-box;
+	box-pack: center; -webkit-box-pack: center; -moz-box-pack: center; -ms-box-pack: center; 
+	box-align: center; -webkit-box-align: center; -moz-box-align: center; -ms-box-align: center;
+}
+
+
+//============CSS3============= 
+
+// prefixer
+$prefix-for-webkit: true !default;
+$prefix-for-moz: true !default;
+$prefix-for-ms: true !default;
+$prefix-for-o: true !default;
+$prefix-for-spec: true !default;
+
+
+//----------------------------
+@mixin prefixer($property, $value) {
+	$prefixes : webkit moz spec; //设置前缀
+	@each $prefix in $prefixes {
+		@if $prefix == webkit and $prefix-for-webkit == true {
+			-webkit-#{$property}: $value;
+		}
+		@else if $prefix == moz and $prefix-for-moz == true {
+			-moz-#{$property}: $value;
+		}
+		@else if $prefix == ms and $prefix-for-ms == true {
+			-ms-#{$property}: $value;
+		}
+		@else if $prefix == o and $prefix-for-o == true {
+			-o-#{$property}: $value;
+		}
+		@else if $prefix == spec and $prefix-for-spec == true {
+			#{$property}: $value;
+		}
+		@else {
+			@warn "Unrecognized prefix: #{$prefix}";
+		}
+	}
+}
+
+@mixin rounded($radius) {
+	@include prefixer(border-radius, $radius);
+}
+
+@mixin rotate($value) {
+	@include prefixer(transform, rotate($value));
+}
+
+@mixin shadow($x, $y, $blur, $color) {
+	@include prefixer(box-shadow, $x $y $blur $color);
+}
+
+@mixin transition($value){
+	@include prefixer(transition, $value);
+}
+
+@mixin box-sizing($type){
+	@include prefixer(box-sizing, $type);
+}
+
+@mixin linear-gradient($from, $to) {
+    /* Fallback for sad browsers */
+    background-color: $to;
+    /* Mozilla Firefox */
+    background-image:-moz-linear-gradient($from, $to);
+    /* Opera */
+    background-image:-o-linear-gradient($from, $to);
+    /* WebKit (Chrome 11+) */
+    background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0, $from), color-stop(1, $to));
+    /* WebKit (Safari 5.1+, Chrome 10+) */
+    background-image: -webkit-linear-gradient($from, $to);
+    /* IE10 */
+    background-image: -ms-linear-gradient($from, $to);
+    /* W3C */
+    background-image: linear-gradient($from, $to);
+}
+
+
+//animation 
+@mixin duration($val){
+	@include prefixer(animation-duration, $val);
+}
+
+@mixin fillmode($name){
+	@include prefixer(animation-fill-mode, $name);
+}
+
+@mixin name($name){
+	@include prefixer(animation-name, $name);
+}
+
+@mixin delay($val){
+	@include prefixer(animation-delay, $val);
+}
+
+@mixin scale3d($x, $y, $z){
+	@include prefixer(transform, scale3d($x, $y, $z));
+}
+
+@mixin translate3d($x, $y, $z){
+	@include prefixer(transform, translate3d($x, $y, $z));
+}
